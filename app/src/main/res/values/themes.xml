@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Application theme must extend an AppCompat or MaterialComponents theme -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Set dark background as requested -->
+        <item name="android:windowBackground">#121212</item>
+        <item name="android:colorBackground">#121212</item>
+    </style>
+</resources>
+

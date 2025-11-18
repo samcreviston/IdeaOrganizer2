@@ -1,21 +1,13 @@
 plugins {
-    kotlin("jvm") version "2.2.20"
+    // Declare plugin versions here but don't apply them to the root project.
+    id("com.android.application") version "8.2.2" apply false
+    id("org.jetbrains.kotlin.android") version "1.9.22" apply false
 }
 
-group = "org.example"
-version = "1.0-SNAPSHOT"
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation(kotlin("test"))
-}
-
-tasks.test {
-    useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(17)
+// Configure repositories for all projects
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
 }

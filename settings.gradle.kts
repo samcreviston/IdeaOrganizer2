@@ -7,8 +7,8 @@ pluginManagement {
 
     // Explicitly declare plugin versions so they can be resolved from the repositories above
     plugins {
-        id("com.android.application") version "8.4.2"
-        id("org.jetbrains.kotlin.android") version "2.2.20"
+        id("com.android.application") version "8.2.2"
+        id("org.jetbrains.kotlin.android") version "1.9.22"
     }
 }
 
