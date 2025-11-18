@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
+ <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- Outer gradient border -->
+    <!-- Outer gradient border as fill -->
     <item>
         <shape android:shape="rectangle">
             <corners android:radius="@dimen/card_corner_radius" />
-            <stroke android:width="@dimen/card_border_width"
-                android:color="#00FFFFFF" />
             <gradient
                 android:type="linear"
-                android:startColor="#FFC107"  <!-- amber -->
-                android:endColor="#FFEB3B"    <!-- yellow -->
+                android:startColor="#FFC107"
+                android:endColor="#FFEB3B"
                 android:angle="0" />
         </shape>
     </item>
+
     <!-- Inner background inset so the border shows -->
-    <item android:top="@dimen/card_border_width"
+    <item
+        android:top="@dimen/card_border_width"
         android:bottom="@dimen/card_border_width"
         android:left="@dimen/card_border_width"
         android:right="@dimen/card_border_width">
@@ -24,4 +24,3 @@
         </shape>
     </item>
 </layer-list>
-

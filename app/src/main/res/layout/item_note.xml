@@ -8,14 +8,19 @@
     card_view:cardUseCompatPadding="true"
     card_view:cardBackgroundColor="@android:color/transparent">
 
-    <TextView
-        android:id="@+id/noteTextView"
+    <EditText
+        android:id="@+id/noteEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="12dp"
         android:textColor="#FFFFFF"
         android:textSize="16sp"
         android:background="@drawable/card_gradient_border"
-        android:text="Note content" />
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:minLines="1"
+        android:maxLines="6"
+        android:imeOptions="actionDone"
+        android:hint="Note content" />
 
 </androidx.cardview.widget.CardView>
