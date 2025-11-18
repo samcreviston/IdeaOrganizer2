@@ -36,13 +36,15 @@ class ProjectEditorActivity : AppCompatActivity() {
         binding.notesRecyclerView.adapter = adapter
 
         binding.addNoteButton.setOnClickListener {
-            project.notes.add(Note("New note"))
+            project.notes.add(Note(""))
             ProjectsRepository.updateProject(project)
             adapter.notifyDataSetChanged()
         }
 
         binding.saveTitleButton.setOnClickListener {
             project.title = binding.titleTextView.text.toString()
+            // prune trailing empty notes
+            ProjectsRepository.pruneTrailingEmptyNotes(project.id)
             ProjectsRepository.updateProject(project)
             finish()
         }

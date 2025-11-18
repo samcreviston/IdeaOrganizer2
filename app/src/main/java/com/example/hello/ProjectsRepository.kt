@@ -25,6 +25,22 @@ object ProjectsRepository {
         val idx = projects.indexOfFirst { it.id == project.id }
         if (idx >= 0) projects[idx] = project
     }
+
+    /**
+     * Removes trailing notes whose content is blank (empty or whitespace) from the given project.
+     * Returns the number of notes removed.
+     */
+    fun pruneTrailingEmptyNotes(projectId: Long): Int {
+        val project = getProject(projectId) ?: return 0
+        var removed = 0
+        val notes = project.notes
+        while (notes.isNotEmpty() && notes.last().content.isBlank()) {
+            notes.removeAt(notes.size - 1)
+            removed++
+        }
+        if (removed > 0) updateProject(project)
+        return removed
+    }
 }
 
 // Note: Project and Note data classes are defined in `model/Project.kt` to avoid duplication.
